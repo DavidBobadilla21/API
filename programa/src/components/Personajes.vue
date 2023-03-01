@@ -100,10 +100,29 @@ export default {
     Morty</h2>
 
 
+
+
   <div class="grid grid-cols-2 outline-2 outline-blue-700">
     <div>
+      <form class="px-28">
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input type="search" id="default-search"
+            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Personajes..." required>
+          <button type="submit"
+            class="text-white absolute right-2.5 bottom-2.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
+        </div>
+      </form>
       <!--Listado de cada 20 personajes o sea pagina-->
-      <div class="text-2xl my-10 text-green-500 sm:py-2">
+      <div class=" px-2 text-2xl my-10 text-green-500 sm:py-2">
         <ul class=" ml-4 text-xl">
           <li v-for="p in personajes">
             <!--Llamando función obtener info personal por personaje-->
@@ -120,8 +139,7 @@ export default {
 
         <div class="personaje">
           <a href="#" class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
-            <span
-              class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-800 "></span>
+            <span class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-800 "></span>
 
             <div class="sm:flex sm:justify-between sm:gap-4">
               <div>
@@ -147,7 +165,7 @@ export default {
                 <dt class="text-sm font-medium text-gray-600"> {{ infoUno.gender }}</dt>
                 <dd class="text-xs text-gray-500">Generó</dd>
               </div>
-            
+
 
               <div class="flex flex-col-reverse">
                 <dt class="text-sm font-medium text-gray-600"> {{ infoUno.species }}</dt>
@@ -179,8 +197,7 @@ export default {
     <!--Contador-->
     <button @click="pag(cont)" class="p-5  ml-4" type="center">{{ cont }}</button>
     <!--Pagina anterior-->
-    <button @click="pagSig(cont)"
-      class=" ml-4 text-white bh-14 sm:h-10 px-7 font-semibold rounded-md bg-green-800 mb-8 justify-center shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
-      type="center">Siguiente </button>
-  </div>
-</template>
+  <button @click="pagSig(cont)"
+    class=" ml-4 text-white bh-14 sm:h-10 px-7 font-semibold rounded-md bg-green-800 mb-8 justify-center shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
+    type="center">Siguiente </button>
+</div></template>
